@@ -4,7 +4,7 @@ const Banner = () => {
       <div className="carousel mx-1 h-[60vh] lg:h-[80vh] font-Inter rounded-lg">
         <div id="slide5" className="carousel-item relative w-full  ">
           <img
-            src="/src/assets/images/banner/5.jpg"
+            src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/images/banner/5.jpg"
             className="w-full h-[60vh] lg:h-[80vh]"
           />
           <div className="absolute  h-full bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
@@ -19,75 +19,74 @@ const Banner = () => {
           </div>
           <div className="absolute flex justify-end  transform -translate-y-1/2 left-5 right-5 bottom-0 ">
             <a href="#slide4" className="btn btn-circle hover:border-0 text-white bg-transparent hover:bg-[#FF3811] hover:outline-0  mx-2">
-              <img src="/src/assets/icons/Vector.png
-              " alt="" />
+              <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/icons/Vector.png" alt="" />
             </a>
             <a href="#slide1" className="btn btn-circle hover:border-0 text-white bg-transparent hover:bg-[#FF3811]">
-            <img src="/src/assets/icons/Vector 2.png
+            <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/icons/Vector%202.png
               " alt="" />
             </a>
           </div>
         </div>
         <div id="slide1" className="carousel-item relative w-full">
           <img
-            src="/src/assets/images/banner/1.jpg"
+            src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/images/banner/1.jpg"
             className="w-full h-[60vh] lg:h-[80vh]"
           />
           <div className="absolute flex justify-end  transform -translate-y-1/2 left-5 right-5 bottom-0 ">
             <a href="#slide5" className="btn btn-circle hover:border-0 text-white bg-transparent hover:bg-[#FF3811] hover:outline-0  mx-2">
-              <img src="/src/assets/icons/Vector.png
+              <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/icons/Vector.png
               " alt="" />
             </a>
             <a href="#slide2" className="btn btn-circle hover:border-0 text-white bg-transparent hover:bg-[#FF3811]">
-            <img src="/src/assets/icons/Vector 2.png
+            <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/icons/Vector%202.png
               " alt="" />
             </a>
           </div>
         </div>
         <div id="slide2" className="carousel-item relative w-full">
           <img
-            src="/src/assets/images/banner/2.jpg"
+            src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/images/banner/2.jpg"
             className="w-full h-[60vh] lg:h-[80vh]"
           />
           <div className="absolute flex justify-end  transform -translate-y-1/2 left-5 right-5 bottom-0 ">
             <a href="#slide1" className="btn btn-circle mx-2 hover:border-0 text-white bg-transparent hover:bg-[#FF3811]">
-            <img src="/src/assets/icons/Vector.png
+            <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/icons/Vector.png
               " alt="" />
             </a>
             <a href="#slide3" className="btn btn-circle hover:border-0 text-white bg-transparent hover:bg-[#FF3811]">
-            <img src="/src/assets/icons/Vector 2.png
+            <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/icons/Vector%202.png
               " alt="" />
             </a>
           </div>
         </div>
         <div id="slide3" className="carousel-item relative w-full">
           <img
-            src="/src/assets/images/banner/3.jpg"
+            src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/images/banner/3.jpg"
             className="w-full h-[60vh] lg:h-[80vh]"
           />
           <div className="absolute flex justify-end  transform -translate-y-1/2 left-5 right-5 bottom-0 ">
             <a href="#slide2" className="btn btn-circle mx-2 hover:border-0 text-white bg-transparent hover:bg-[#FF3811]">
-            <img src="/src/assets/icons/Vector.png
+            <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/icons/Vector.png
               " alt="" />
             </a>
             <a href="#slide4" className="btn btn-circle hover:border-0  text-white bg-transparent hover:bg-[#FF3811]">
-            <img src="/src/assets/icons/Vector 2.png
+            <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/icons/Vector%202.png
               " alt="" />
             </a>
           </div>
         </div>
         <div id="slide4" className="carousel-item relative w-full">
           <img
-            src="/src/assets/images/banner/4.jpg"
+            src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/images/banner/4.jpg"
             className="w-full h-[60vh] lg:h-[80vh]"
           />
           <div className="absolute flex justify-end  transform -translate-y-1/2 left-5 right-5 bottom-0 ">
             <a href="#slide3" className="btn btn-circle mx-2 hover:border-0 text-white bg-transparent hover:bg-[#FF3811]">
-            <img src="/src/assets/icons/Vector.png
+            <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/icons/Vector.png
               " alt="" />
             </a>
             <a href="#slide5" className="btn btn-circle hover:border-0 text-white bg-transparent hover:bg-[#FF3811]">
-            <img src="/src/assets/icons/Vector 2.png
+            <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/icons/Vector%202.png
               " alt="" />
             </a>
           </div>

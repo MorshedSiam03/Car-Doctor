@@ -37,7 +37,7 @@ const NavBar = () => {
             </ul>
           </div>
           <a className="">
-            <img src="/src/assets/icons/logo.svg" className="w-16 cursor-auto lg:w-20" alt="" />
+            <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/57322f13fb6eed60c434ac2a6dec9aa5c55d33cd/src/assets/icons/logo.svg" className="w-16 cursor-auto lg:w-20" alt="" />
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">

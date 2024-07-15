@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer className="footer text-white bg-[#151515]  p-16">
-  <aside> <img src="/src/assets/LogoFooter.svg" className=" size-32" alt="" />
+  <aside> <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/57322f13fb6eed60c434ac2a6dec9aa5c55d33cd/src/assets/LogoFooter.svg" className=" size-32" alt="" />
     <p>
       ACME Industries Ltd.
       <br />

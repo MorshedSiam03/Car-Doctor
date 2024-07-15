@@ -6,14 +6,14 @@ const About = () => {
             <div className="lg:w-1/2 relative">
               <div className="relative left-[-30px] md:left-[-60px] lg:left-20 w-[43vh] h-[50vh] md:w-[50vh] md:h-[55vh]">
                 <img
-                  src="/src/assets/images/about_us/person.jpg"
+                  src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/images/about_us/person.jpg"
                   className="w-ful h-full object-cover rounded-lg"
                   alt="Person"
                 />
               </div>
               <div className="absolute w-[35vh] h-[40vh] md:w-[40vh] md:h-[40vh] right-[-30px] md:right-[-60px] lg:right-20 border-8 border-white transform -translate-y-2/3 overflow-hidden rounded-lg shadow-2xl">
                 <img
-                  src="/src/assets/images/about_us/parts.jpg"
+                  src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/images/about_us/parts.jpg"
                   className="w-full h-full object-cover"
                   alt="Parts"
                 />
