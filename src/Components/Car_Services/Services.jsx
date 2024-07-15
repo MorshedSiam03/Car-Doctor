@@ -19,10 +19,10 @@ const Services = () => {
           humour, or words which look even slightly believable.{" "}
         </p>
       </div>
-      <div className="grid lg:grid-cols-3 gap-5 mb-5">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
         {services.map((service) => (
           <div key={service.id}>
-            <div className=" rounded-xl bg-base-100 p-7 h-96 shadow-xl">
+            <div className="rounded-xl bg-base-100 p-7 h-96 shadow-xl">
               <figure>
                 <img src={service.img} className=" h-60 rounded-xl" alt="Service" />
               </figure>

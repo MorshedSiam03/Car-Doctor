@@ -1,3 +1,5 @@
+import 'animate.css';
+
 const About = () => {
     return (
       <>
@@ -14,12 +16,12 @@ const About = () => {
               <div className="absolute w-[35vh] h-[40vh] md:w-[40vh] md:h-[40vh] right-[-30px] md:right-[-60px] lg:right-20 border-8 border-white transform -translate-y-2/3 overflow-hidden rounded-lg shadow-2xl">
                 <img
                   src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/images/about_us/parts.jpg"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover "
                   alt="Parts"
                 />
               </div>
             </div>
-            <div className="md:w-2/3 lg:w-1/2 ">
+            <div className="md:w-2/3 lg:w-1/2 animate__animated animate__fadeInRight">
               <p className="font-bold text-2xl text-[#FF3811]">About Us</p>
               <h1 className="text-5xl lg:w-2/3 md:w-4/5 font-bold">We are qualified & of experience in this field</h1>
               <p className="pt-6 pb-3">
