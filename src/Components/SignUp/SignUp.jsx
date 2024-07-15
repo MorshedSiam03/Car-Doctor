@@ -1,6 +1,26 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const SignUp = () => {
+    const { createUser } = useContext(AuthContext);
+    const handleSignUp = e => {
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        const user = {name, email, password}
+        console.log(user);
+
+        createUser(email, password)
+        .then(result=>{
+            const user = result.user;
+            console.log(user)
+        })
+        .then(error => console.log(error))
+    }
+
     return (
         <div>
       <div className="hero">
@@ -9,7 +29,7 @@ const SignUp = () => {
             <img src="/src/assets/images/login/login.svg" alt="" />
           </div>
           <div className="card bg-base-100 w-full p-5 md:max-w-sm lg:max-w-md border-2">
-            <form className="card-body">
+            <form onSubmit={handleSignUp} className="card-body">
                 <h1 className=" text-2xl font-semibold text-center" >Login</h1>
               <div className="form-control">
                 <label className="label">
@@ -17,6 +37,7 @@ const SignUp = () => {
                 </label>
                 <input
                   type="text"
+                  name="name"
                   placeholder="name"
                   className="input input-bordered"
                   required
@@ -28,6 +49,7 @@ const SignUp = () => {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   placeholder="email"
                   className="input input-bordered"
                   required
@@ -39,6 +61,7 @@ const SignUp = () => {
                 </label>
                 <input
                   type="password"
+                  name="password"
                   placeholder="password"
                   className="input input-bordered"
                   required
