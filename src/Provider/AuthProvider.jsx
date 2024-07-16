@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import app from "../Firebase/firebase.config";
 import PropTypes from 'prop-types';
 
@@ -10,10 +10,15 @@ const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    const googlePRovider = new GoogleAuthProvider();
 
     const createUser = (email, password) =>{
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
+    }
+    const googleLogin = () => {
+        setLoading(true);
+        return signInWithPopup(auth, googlePRovider)
     }
     // For Check Current User >> If already have user with same email to give user a notification
     useEffect(()=>{
@@ -35,6 +40,7 @@ const AuthProvider = ({children}) => {
         loading,
         createUser,
         Login,
+        googleLogin,
     }
 
     return (

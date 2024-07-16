@@ -1,11 +1,15 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 const Login = () => { 
-
-    const {Login} = useContext(AuthContext);
-
+    const {Login, googleLogin} = useContext(AuthContext);
+    const [showPass, setShowPass] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
+    const location = useLocation();
+    const navigate = useNavigate();
     const handleLogin = e => {
         e.preventDefault();
         const form = e.target;
@@ -15,8 +19,25 @@ const Login = () => {
         .then(result=>{
             console.log(result.user);
         })
-        .then(error=>console.log(error))
-    }
+        .catch((error) => {
+            console.error(error);
+            setErrorMessage(error.message);
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Invalid Email or Password",
+            });
+          });     
+    };
+
+    const handleGoogleLogin = () => {
+        googleLogin()
+        .then(result=>{
+          console.log(result.user);
+          navigate(location?.state ? location.state : "/");
+        })
+        .catch();
+      };
 
   return (
     <div>
@@ -40,23 +61,39 @@ const Login = () => {
                   required
                 />
               </div>
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-bold">Password</span>
                 </label>
+                <div>
                 <input
-                  type="password"
+                  type={showPass ? "text" : "password"}
                   name="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered w-full"
                   required
                 />
+                <label
+                  className="absolute ml-[-30px] py-3 text-xl"
+                  onClick={() => setShowPass(!showPass)}
+                >
+                  {showPass ? <FaEye /> : <FaEyeSlash />}
+                </label>
+                </div>
+                {errorMessage && (
+                  <p className="text-red-600 mt-2 text-sm">
+                    {" "}
+                    {errorMessage.split("Firebase:")}{" "}
+                  </p>
+                )}
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
                     Forgot password?
                   </a>
                 </label>
               </div>
+
               <div className="form-control">
                 <button className="btn bg-[#ff3811] text-white">Sign In</button>
               </div>
@@ -65,7 +102,7 @@ const Login = () => {
                 <div className="flex justify-center my-5 gap-3">
                     <img src="/src/assets/icons/bx_bxl-facebook.svg" className="p-3 btn rounded-full bg-slate-200" alt="" />
                     <img src="/src/assets/icons/bx_bxl-linkedin.svg" className="p-3 btn rounded-full bg-slate-200" alt="" />
-                    <img src="/src/assets/icons/google 1.svg" className="p-3 btn rounded-full bg-slate-200" alt="" />
+                    <img onClick={handleGoogleLogin} src="/src/assets/icons/google 1.svg" className="p-3 btn rounded-full bg-slate-200" alt="" />
                 </div>
                 <p>Do not Have an account? <Link to={`/SignUp`} className=" underline hover:font-semibold text-[#ff3811]">Sign Up</Link></p>
               </div>
