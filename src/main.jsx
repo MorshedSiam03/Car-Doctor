@@ -9,6 +9,8 @@ import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
 import SignUp from "./Components/SignUp/SignUp";
 import AuthProvider from "./Provider/AuthProvider";
+import Checkout from "./Components/Checkout/Checkout";
+import AddService from "./Components/Car_Services/AddService";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,15 @@ const router = createBrowserRouter([
       {
         path: "/SignUp",
         element: <SignUp></SignUp>,
+      },
+      {
+        path: "/AddService",
+        element: <AddService></AddService>,
+      },
+      {
+        path: "Checkout/:id",
+        element: <Checkout></Checkout>,
+        loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
       },
     ],
   },

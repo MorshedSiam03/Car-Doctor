@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Services = () => {
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch("/public/services.json")
+    fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, []);
@@ -32,7 +32,7 @@ const Services = () => {
                 <h2 className="text-2xl text-[#FF3811] font-semibold"><span>Price: $</span>{service.price}</h2>
                 </div>
                 <div>
-                  <Link><img src="/src/assets/OrangeAro.svg" className=" w-8 " alt="" /></Link>
+                  <Link to={`/Checkout/${service._id}`} ><img src="/src/assets/OrangeAro.svg" className="w-8" alt="" /></Link>
                 </div>
               </div>
             </div>
