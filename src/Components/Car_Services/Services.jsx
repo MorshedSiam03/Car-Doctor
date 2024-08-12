@@ -32,7 +32,7 @@ const Services = () => {
                 <h2 className="text-2xl text-[#FF3811] font-semibold"><span>Price: $</span>{service.price}</h2>
                 </div>
                 <div>
-                  <Link to={`/Checkout/${service._id}`} ><img src="/src/assets/OrangeAro.svg" className="w-8" alt="" /></Link>
+                  <Link to={`/Services/${service._id}`} ><img src="/src/assets/OrangeAro.svg" className="w-8" alt="" /></Link>
                 </div>
               </div>
             </div>

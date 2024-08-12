@@ -1,7 +1,6 @@
-
 const AddService = () => {
-    return (
-        <div>
+  return (
+    <div>
       <div className="relative mb-5">
         <div className=" absolute rounded-xl h-full bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
           <h2 className="text-white font-bold md:text-4xl lg:text-6xl md:my-24 lg:my-32 mx-10">
@@ -68,7 +67,9 @@ const AddService = () => {
                   </div>
                 </div>
                 <div className="form-control mt-3">
-                  <button className="btn bg-[#FF3811] text-white">Submit</button>
+                  <button className="btn bg-[#FF3811] text-white">
+                    Submit
+                  </button>
                 </div>
               </form>
             </div>
@@ -76,7 +77,7 @@ const AddService = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default AddService;
