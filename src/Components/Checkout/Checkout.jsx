@@ -1,14 +1,52 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Checkout = () => {
   const service = useLoaderData();
+  const {user} = useContext(AuthContext);
+
+  const handleCheckout = e =>{
+    e.preventDefault();
+    const form = e.target;
+    const FName = form.FName.value;
+    const LName = form.LName.value;
+    const Phone = form.Phone.value;
+    const email = user?.email;
+    const Massage = form.Massage.value;
+    const order = {
+        CustomerName: FName, 
+        LName,
+        ServiceId: service._id,
+        ServiceName: service.title,
+        Price: service.price,
+        img: service.img,
+        email, 
+        Phone, 
+        Massage
+    };
+    console.log(order);
+
+    fetch('http://localhost:5000/orders',{
+        method: 'POST',
+        headers: {
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify(order)
+
+    })
+    .then(res => res.json())
+    .then(data =>{
+        console.log(data);
+    })
+  }
 
   return (
     <div>
       <div className="relative mb-5">
         <div className=" absolute rounded-xl h-full bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
-          <h2 className="text-white font-bold md:text-4xl lg:text-6xl md:my-24 lg:my-32 mx-10">
-            Checkout {service.title}
+          <h2 className="text-white font-bold md:text-4xl lg:text-7xl md:my-24 lg:my-32 mx-10">
+            Checkout
           </h2>
         </div>
         <img
@@ -28,12 +66,18 @@ const Checkout = () => {
       <div>
         <div className="p-24 my-20 bg-base-200 rounded-lg">
           <div className="">
+            <div className="flex justify-between font-bold text-2xl mb-5 " >
+                <h1>Service Name: {service.title}</h1>
+                <h1>Due Amount: {'$ '+ service.price}</h1>
+            </div>
             <div className="w-full">
-              <form className="">
+              <form onSubmit={handleCheckout} className="">
                 <div className="grid md:grid-cols-2 gap-3">
                   <div className="form-control">
                     <input
                       type="text"
+                      name="FName"
+                      defaultValue={user?.displayName}
                       placeholder="First Name"
                       className="input"
                       required
@@ -42,14 +86,15 @@ const Checkout = () => {
                   <div className="form-control">
                     <input
                       type="text"
+                      name="LName"
                       placeholder="Last Name"
                       className="input"
-                      required
                     />
                   </div>
                   <div className="form-control">
                     <input
                       type="text"
+                      name="Phone"
                       placeholder="Your Phone"
                       className="input"
                       required
@@ -58,6 +103,8 @@ const Checkout = () => {
                   <div className="form-control">
                     <input
                       type="email"
+                      name="email"
+                      defaultValue={user?.email}
                       placeholder="Your Email"
                       className="input"
                       required
@@ -66,6 +113,7 @@ const Checkout = () => {
                   <div className="form-control col-span-2">
                     <textarea
                       placeholder="Your Massage"
+                      name="Massage"
                       className="textarea textarea-lg h-52 w-full"
                     ></textarea>
                   </div>

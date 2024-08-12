@@ -7,6 +7,12 @@ const Footer = () => {
       <br />
       Providing reliable tech since 1992
     </p>
+    <div className="flex gap-2">
+      <img src="/src/assets/icons/google 1.svg" className="bg-slate-800 p-3 w-10 h-10 rounded-full" alt="" />
+      <img src="/src/assets/icons/bx_bxl-facebook.svg" className="bg-slate-800 p-3 w-10 h-10 rounded-full" alt="" />
+      <img src="/src/assets/icons/bx_bxl-linkedin.svg" className="bg-slate-800 p-3 w-10 h-10 rounded-full" alt="" />
+      <img src="/src/assets/icons/bx_bxl-linkedin.svg" className="bg-slate-800 p-3 w-10 h-10 rounded-full" alt="" />
+    </div>
   </aside>
   <nav>
     <h6 className="font-bold py-5 text-white">About</h6>

@@ -1,13 +1,33 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const NavBar = () => {
-    const navItems = <>
-    <li><Link>Home</Link></li>
-    <li><Link>About</Link></li>
-    <li><Link>Service</Link></li>
-    <li><Link>Blog</Link></li>
-    <li><Link>Contact</Link></li>
+  const { user, Logout } = useContext(AuthContext);
+  const handleLogout = () =>{
+    Logout()
+    .then(()=>{})
+    .catch(error => console.error(error))
+  }
+  const navItems = (
+    <>
+      <li>
+        <Link>Home</Link>
+      </li>
+      <li>
+        <Link>About</Link>
+      </li>
+      <li>
+        <Link>Service</Link>
+      </li>
+      <li>
+        <Link>Blog</Link>
+      </li>
+      <li>
+        <Link>Contact</Link>
+      </li>
     </>
+  );
   return (
     <div>
       <div className="navbar my-3 bg-base-100">
@@ -37,16 +57,31 @@ const NavBar = () => {
             </ul>
           </div>
           <a className="">
-            <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/57322f13fb6eed60c434ac2a6dec9aa5c55d33cd/src/assets/icons/logo.svg" className="w-16 cursor-auto lg:w-20" alt="" />
+            <img
+              src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/57322f13fb6eed60c434ac2a6dec9aa5c55d33cd/src/assets/icons/logo.svg"
+              className="w-16 cursor-auto lg:w-20"
+              alt=""
+            />
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-          {navItems}
-          </ul>
+          <ul className="menu menu-horizontal px-1">{navItems}</ul>
         </div>
-        <div className="navbar-end">
-          <a className="btn bg-transparent text-[#FF3811] border-2 border-[#FF3811] hover:bg-[#FF3811] hover:border-0 hover:text-white hover:font-semibold">Appointment</a>
+        <div className="navbar-end gap-2">
+          {user?.email ? (
+            <>
+              <Link onClick={handleLogout} className="hover:underline text-gray-600">Logout</Link>
+            </>
+          ) : (
+            <>
+              <Link to={`/Login`} className="hover:underline text-gray-600">SignIn</Link>
+              <h1 className="font-extralight">|</h1>
+              <Link to={`/SignUp`} className="hover:underline text-gray-600">SignUp</Link>
+            </>
+          )}
+          <a className="btn bg-transparent text-[#FF3811] border-2 border-[#FF3811] hover:bg-[#FF3811] hover:border-0 hover:text-white hover:font-semibold">
+            Appointment
+          </a>
         </div>
       </div>
     </div>

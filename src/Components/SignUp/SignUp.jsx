@@ -30,7 +30,7 @@ const SignUp = () => {
           </div>
           <div className="card bg-base-100 w-full p-5 md:max-w-sm lg:max-w-md border-2">
             <form onSubmit={handleSignUp} className="card-body">
-                <h1 className=" text-2xl font-semibold text-center" >Login</h1>
+                <h1 className=" text-2xl font-semibold text-center" >Register</h1>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text font-bold">Name</span>
