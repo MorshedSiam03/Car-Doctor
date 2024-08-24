@@ -12,6 +12,8 @@ import AuthProvider from "./Provider/AuthProvider";
 import Checkout from "./Components/Checkout/Checkout";
 import AddService from "./Components/Car_Services/AddService";
 import ServiceDetails from "./Components/Car_Services/ServiceDetails";
+import MyOrders from "./Components/Orders/MyOrders";
+import PrivateRoute from "./Components/Routes/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -41,9 +43,13 @@ const router = createBrowserRouter([
         loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
       },
       {
-        path: "Checkout/:id",
+        path: "/Checkout/:id",
         element: <Checkout></Checkout>,
         loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+      },
+      {
+        path: "/MyOrders",
+        element: <PrivateRoute><MyOrders></MyOrders></PrivateRoute>,
       },
     ],
   },

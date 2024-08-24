@@ -4,11 +4,11 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const NavBar = () => {
   const { user, Logout } = useContext(AuthContext);
-  const handleLogout = () =>{
+  const handleLogout = () => {
     Logout()
-    .then(()=>{})
-    .catch(error => console.error(error))
-  }
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
   const navItems = (
     <>
       <li>
@@ -20,9 +20,11 @@ const NavBar = () => {
       <li>
         <Link>Service</Link>
       </li>
-      <li>
-        <Link>Blog</Link>
-      </li>
+      {user?.email && (
+        <li>
+          <Link to={'/MyOrders'} >MyOrders</Link>
+        </li>
+      )}
       <li>
         <Link>Contact</Link>
       </li>
@@ -70,13 +72,22 @@ const NavBar = () => {
         <div className="navbar-end gap-2">
           {user?.email ? (
             <>
-              <Link onClick={handleLogout} className="hover:underline text-gray-600">Logout</Link>
+              <Link
+                onClick={handleLogout}
+                className="hover:underline text-gray-600"
+              >
+                Logout
+              </Link>
             </>
           ) : (
             <>
-              <Link to={`/Login`} className="hover:underline text-gray-600">SignIn</Link>
+              <Link to={`/Login`} className="hover:underline text-gray-600">
+                SignIn
+              </Link>
               <h1 className="font-extralight">|</h1>
-              <Link to={`/SignUp`} className="hover:underline text-gray-600">SignUp</Link>
+              <Link to={`/SignUp`} className="hover:underline text-gray-600">
+                SignUp
+              </Link>
             </>
           )}
           <a className="btn bg-transparent text-[#FF3811] border-2 border-[#FF3811] hover:bg-[#FF3811] hover:border-0 hover:text-white hover:font-semibold">
