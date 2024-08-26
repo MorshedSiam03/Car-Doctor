@@ -14,6 +14,10 @@ import AddService from "./Components/Car_Services/AddService";
 import ServiceDetails from "./Components/Car_Services/ServiceDetails";
 import MyOrders from "./Components/Orders/MyOrders";
 import PrivateRoute from "./Components/Routes/PrivateRoute";
+import Services from "./Components/Car_Services/Services";
+import AddProducts from "./Components/Products/AddProducts";
+import AddMember from "./Components/Team/AddMember";
+import AddReview from "./Components/Testimonial/AddReview";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +42,10 @@ const router = createBrowserRouter([
         element: <AddService></AddService>,
       },
       {
+        path: "/Service",
+        element: <Services></Services>,
+      },
+      {
         path: "/Services/:id",
         element: <ServiceDetails></ServiceDetails>,
         loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
@@ -50,6 +58,18 @@ const router = createBrowserRouter([
       {
         path: "/MyOrders",
         element: <PrivateRoute><MyOrders></MyOrders></PrivateRoute>,
+      },
+      {
+        path: "/AddProducts",
+        element: <AddProducts></AddProducts>,
+      },
+      {
+        path: "/AddMember",
+        element: <AddMember></AddMember>,
+      },
+      {
+        path: "/AddReview",
+        element: <AddReview></AddReview>,
       },
     ],
   },

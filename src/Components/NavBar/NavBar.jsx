@@ -15,10 +15,10 @@ const NavBar = () => {
         <Link>Home</Link>
       </li>
       <li>
-        <Link>About</Link>
+        <Link >About</Link>
       </li>
       <li>
-        <Link>Service</Link>
+        <Link to={'/Service'} >Service</Link>
       </li>
       {user?.email && (
         <li>
@@ -67,7 +67,7 @@ const NavBar = () => {
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">{navItems}</ul>
+          <ul className="menu menu-horizontal gap-2 px-1">{navItems}</ul>
         </div>
         <div className="navbar-end gap-2">
           {user?.email ? (
