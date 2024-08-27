@@ -11,7 +11,7 @@ const ServiceDetails = () => {
           </h2>
         </div>
         <img
-          src="/src/assets/images/checkout/checkout.png"
+          src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/images/checkout/checkout.png"
           alt="Checkout"
           className="w-full h-40 md:h-full"
         />
@@ -123,19 +123,19 @@ const ServiceDetails = () => {
           <div className="flex flex-col rounded-xl p-10 md:p-2 lg:p-10 bg-[#F3F3F3]">
             <h1 className="font-bold text-3xl">Services</h1>
             <button className="btn flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white my-3 hover:bg-[#ff3811] hover:text-white">
-              Full Car Repair <img src="/src/assets/OrangeAro.svg" alt="" />{" "}
+              Full Car Repair <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/OrangeAro.svg" alt="" />{" "}
             </button>
             <button className="btn flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white my-2 hover:bg-[#ff3811] hover:text-white">
-              Engine Repair <img src="/src/assets/OrangeAro.svg" alt="" />{" "}
+              Engine Repair <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/OrangeAro.svg" alt="" />{" "}
             </button>
             <button className="btn flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white my-2 hover:bg-[#ff3811] hover:text-white">
-              Automatic Service <img src="/src/assets/OrangeAro.svg" alt="" />{" "}
+              Automatic Service <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/OrangeAro.svg" alt="" />{" "}
             </button>
             <button className="btn flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white my-2 hover:bg-[#ff3811] hover:text-white">
-              Engine Oil Change <img src="/src/assets/OrangeAro.svg" alt="" />{" "}
+              Engine Oil Change <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/OrangeAro.svg" alt="" />{" "}
             </button>
             <button className="btn flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white my-2 hover:bg-[#ff3811] hover:text-white">
-              Battery Change <img src="/src/assets/OrangeAro.svg" alt="" />{" "}
+              Battery Change <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/OrangeAro.svg" alt="" />{" "}
             </button>
           </div>
 
@@ -143,32 +143,32 @@ const ServiceDetails = () => {
             <h1 className="text-white text-3xl font-bold">Download</h1>
             <div className="flex justify-between my-5">
               <div className="flex gap-3">
-                <img src="/src/assets/icons/Doc.svg" alt="" />
+                <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/icons/Doc.svg" alt="" />
                 <div className="text-white">
                   <h1 className="text-lg font-semibold">Our Brochure</h1>
                   <p className="text-gray-400 hover:underline">Download</p>
                 </div>
               </div>
               <button className="btn bg-[#ff3811] border-0">
-                <img src="/src/assets/icons/Vector 2.png" alt="" />
+                <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/icons/Vector%202.png" alt="" />
               </button>
             </div>
             <div className="flex justify-between mt-4">
               <div className="flex gap-3">
-                <img src="/src/assets/icons/Doc.svg" alt="" />
+                <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/icons/Doc.svg" alt="" />
                 <div className="text-white">
                   <h1 className="text-lg font-semibold">Company Details</h1>
                   <p className="text-gray-400 hover:underline">Download</p>
                 </div>
               </div>
               <button className="btn bg-[#ff3811] border-0">
-                <img src="/src/assets/icons/Vector 2.png" alt="" />
+                <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/icons/Vector%202.png" alt="" />
               </button>
             </div>
           </div>
 
           <div className=" bg-black p-12 md:py-10 md:px-4 lg:p-12 pb-20 flex flex-col items-center justify-center  rounded-xl">
-            <img src="/src/assets/LogoFooter.svg" className="w-40" alt="" />
+            <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/LogoFooter.svg" className="w-40" alt="" />
             <h1 className=" text-white text-2xl font-semibold text-center my-5">
               Need Help? We Are Here To Help You
             </h1>

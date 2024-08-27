@@ -67,7 +67,7 @@ const Testimonial = () => {
                   </p>
                 </div>
                 <img
-                  src="/src/assets/icons/quote.svg"
+                  src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/icons/quote.svg"
                   className="size-12 ml-auto opacity-40"
                   alt="Quote"
                 />

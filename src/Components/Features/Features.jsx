@@ -15,7 +15,7 @@ const Features = () => {
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 mb-10 mx-10 md:mx-32 justify-items-center">
   <div className="p-4 rounded-lg border-2 size-36 flex flex-col items-center">
     <img
-      src="/src/assets/icons/group.svg"
+      src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/icons/group.svg"
       className="size-20"
       alt="Expert Team Icon"
     />
@@ -23,7 +23,7 @@ const Features = () => {
   </div>
   <div className="p-2 py-4 rounded-lg bg-[#FF3811] text-white size-36 flex flex-col items-center">
     <img
-      src="/src/assets/icons/Group 38729.svg"
+      src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/icons/Group%2038729.svg"
       className="size-20"
       alt="Timely Delivery Icon"
     />
@@ -31,7 +31,7 @@ const Features = () => {
   </div>
   <div className="p-4 rounded-lg border-2 size-36 flex flex-col items-center">
     <img
-      src="/src/assets/icons/person.svg"
+      src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/icons/person.svg"
       className="size-20"
       alt="24/7 Support Icon"
     />
@@ -39,7 +39,7 @@ const Features = () => {
   </div>
   <div className="p-2 py-4 rounded-lg border-2 size-36 flex flex-col items-center">
     <img
-      src="/src/assets/icons/Wrench.svg"
+      src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/icons/Wrench.svg"
       className="size-20"
       alt="Best Equipment Icon"
     />
@@ -47,7 +47,7 @@ const Features = () => {
   </div>
   <div className="p-2 py-4 rounded-lg border-2 size-36 flex flex-col items-center">
     <img
-      src="/src/assets/icons/check.svg"
+      src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/icons/check.svg"
       className="size-20"
       alt="100% Guaranty Icon"
     />
@@ -55,7 +55,7 @@ const Features = () => {
   </div>
   <div className="p-2 py-4 rounded-lg border-2 size-36 flex flex-col items-center">
     <img
-      src="/src/assets/icons/deliveryt.svg"
+      src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/icons/deliveryt.svg"
       className="size-20"
       alt="Timely Delivery Icon"
     />

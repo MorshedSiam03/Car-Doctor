@@ -58,7 +58,7 @@ const AddMember = () => {
           </h2>
         </div>
         <img
-          src="/src/assets/images/checkout/checkout.png"
+          src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/images/checkout/checkout.png"
           alt="Checkout"
           className="w-full"
         />

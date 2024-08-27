@@ -8,10 +8,10 @@ const Footer = () => {
       Providing reliable tech since 1992
     </p>
     <div className="flex gap-2">
-      <img src="/src/assets/icons/Group 4889.svg" className=" w-10 h-10 rounded-full" alt="" />
-      <img src="/src/assets/icons/Group 4892.svg" className=" w-10 h-10 rounded-full" alt="" />
-      <img src="/src/assets/icons/Group 4891.svg" className=" w-10 h-10 rounded-full" alt="" />
-      <img src="/src/assets/icons/Group 4893.svg" className="w-10 h-10 rounded-full" alt="" />
+      <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/icons/Group%204889.svg" className=" w-10 h-10 rounded-full" alt="" />
+      <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/icons/Group%204892.svg" className=" w-10 h-10 rounded-full" alt="" />
+      <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/icons/Group%204891.svg" className=" w-10 h-10 rounded-full" alt="" />
+      <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/icons/Group%204893.svg" className=" w-10 h-10 rounded-full" alt="" />
     </div>
   </aside>
   <nav>
