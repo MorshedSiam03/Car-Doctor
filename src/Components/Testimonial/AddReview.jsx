@@ -17,7 +17,7 @@ const AddReview = () => {
     const review = {name, email, image, rating, reviewText };
     console.log(review);
 
-    fetch('http://localhost:5000/reviews', {
+    fetch('https://car-doctor-server-eosin-sigma.vercel.app//reviews', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

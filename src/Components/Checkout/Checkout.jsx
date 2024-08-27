@@ -27,7 +27,7 @@ const Checkout = () => {
     };
     console.log(order);
 
-    fetch('http://localhost:5000/orders',{
+    fetch('https://car-doctor-server-eosin-sigma.vercel.app//orders',{
         method: 'POST',
         headers: {
             'content-type' : 'application/json'

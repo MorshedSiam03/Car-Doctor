@@ -7,14 +7,14 @@ const MyOrders = () => {
   const { user } = useContext(AuthContext);
   const [orders, setOrders] = useState([]);
 
-  const url = `http://localhost:5000/Orders?email=${user?.email}`;
+  const url = `https://car-doctor-server-eosin-sigma.vercel.app//Orders?email=${user?.email}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setOrders(data));}, [url]);
 
   const handleConfirm= id =>{
-    fetch(`http://localhost:5000/Orders/${id}`,{
+    fetch(`https://car-doctor-server-eosin-sigma.vercel.app//Orders/${id}`,{
       method: 'PATCH',
       headers: { 'content-type': 'application/json'},
       body: JSON.stringify({status: 'Confirm'})
@@ -44,7 +44,7 @@ const MyOrders = () => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        fetch(`http://localhost:5000/Orders/${id}`, {
+        fetch(`https://car-doctor-server-eosin-sigma.vercel.app//Orders/${id}`, {
           method: 'DELETE'
         })
         .then(res=>res.json())
