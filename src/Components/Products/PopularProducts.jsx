@@ -5,7 +5,7 @@ const PopularProducts = () => {
 
     const [products, setProducts] = useState([]);
     useEffect(() => {
-      fetch("https://car-doctor-server-eosin-sigma.vercel.app//products")
+      fetch("https://car-doctor-server-eosin-sigma.vercel.app/products")
         .then((res) => res.json())
         .then((data) => setProducts(data));
     }, []);

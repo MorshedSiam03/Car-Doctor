@@ -19,7 +19,7 @@ const AddProducts = () => {
           };
         console.log(product);
     
-        fetch('https://car-doctor-server-eosin-sigma.vercel.app//products', {
+        fetch('https://car-doctor-server-eosin-sigma.vercel.app/products', {
           method: 'POST',
           headers: {
             'content-type': 'application/json',

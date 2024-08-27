@@ -49,12 +49,12 @@ const router = createBrowserRouter([
       {
         path: "/Services/:id",
         element: <ServiceDetails></ServiceDetails>,
-        loader: ({params}) => fetch(`https://car-doctor-server-eosin-sigma.vercel.app//services/${params.id}`)
+        loader: ({params}) => fetch(`https://car-doctor-server-eosin-sigma.vercel.app/services/${params.id}`)
       },
       {
         path: "/Checkout/:id",
         element: <Checkout></Checkout>,
-        loader: ({params}) => fetch(`https://car-doctor-server-eosin-sigma.vercel.app//services/${params.id}`)
+        loader: ({params}) => fetch(`https://car-doctor-server-eosin-sigma.vercel.app/services/${params.id}`)
       },
       {
         path: "/MyOrders",

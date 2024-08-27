@@ -18,7 +18,7 @@ const AddMember = () => {
           };
         console.log(member);
     
-        fetch('https://car-doctor-server-eosin-sigma.vercel.app//teams', {
+        fetch('https://car-doctor-server-eosin-sigma.vercel.app/teams', {
           method: 'POST',
           headers: {
             'content-type': 'application/json',

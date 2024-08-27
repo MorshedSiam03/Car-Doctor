@@ -40,7 +40,7 @@ const AddService = () => {
       facility: facilities };
     console.log(service);
 
-    fetch('https://car-doctor-server-eosin-sigma.vercel.app//services', {
+    fetch('https://car-doctor-server-eosin-sigma.vercel.app/services', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
