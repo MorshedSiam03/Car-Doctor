@@ -13,13 +13,13 @@ const PopularProducts = () => {
   return (
     <>
       <div className="flex flex-col items-center justify-center h-full">
-        <p className="font-bold text-xl text-[#FF3811]">Popular Products</p>
-        <h1 className="text-4xl lg:w-2/3 md:w-4/5 font-bold text-center">
+        <p className="font-bold text-2xl text-[#FF3811]">Popular Products</p>
+        <h1 className="text-4xl md:text-5xl lg:w-2/3 md:w-4/5 font-bold text-center">
           Browse Our Products
         </h1>
         <p className="p-4 text-center text-gray-500">
           The majority have suffered alteration in some form, by injected
-          humour, or randomised <br /> words which do not look even slightly
+          humour, or randomised  words which do not look even slightly
           believable.{" "}
         </p>
       </div>
@@ -57,9 +57,9 @@ const PopularProducts = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-center mb-5">
-        <button className=" p-3 rounded-md font-semibold  bg-transparent border-2 border-[#ff3811] text-[#ff3811] hover:bg-[#ff3811] hover:text-white hover:border-[#ff3811]">
-          More Services
+      <div className="flex justify-center mb-10">
+        <button className="mt-4 p-3 rounded-md font-semibold  bg-transparent border-2 border-[#ff3811] text-[#ff3811] hover:bg-[#ff3811] hover:text-white hover:border-[#ff3811]">
+          More Products
         </button>
       </div>
     </>

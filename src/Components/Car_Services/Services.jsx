@@ -12,9 +12,9 @@ const Services = () => {
   return (
     <>
       <div className="text-center">
-        <p className="font-bold text-3xl text-[#FF3811]">Service</p>
-        <h1 className="font-bold my-4 text-5xl">Our Service Area</h1>
-        <p className="text-lg">
+        <p className="font-bold text-2xl text-[#FF3811]">Service</p>
+        <h1 className="font-bold text-4xl md:text-5xl">Our Service Area</h1>
+        <p className="p-4">
           The majority have suffered alteration in some form, by injected
           humour, or words which look even slightly believable.{" "}
         </p>

@@ -1,9 +1,11 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const SignUp = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, googleLogin } = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
     const handleSignUp = e => {
         e.preventDefault();
         const form = e.target;
@@ -20,6 +22,15 @@ const SignUp = () => {
         })
         .then(error => console.log(error))
     }
+
+    const handleGoogleLogin = () => {
+      googleLogin()
+      .then(result=>{
+        console.log(result.user);
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch();
+    };
 
     return (
         <div>
@@ -75,7 +86,7 @@ const SignUp = () => {
                 <div className="flex justify-center my-5 gap-3">
                     <img src="/src/assets/icons/bx_bxl-facebook.svg" className="p-3 btn rounded-full bg-slate-200" alt="" />
                     <img src="/src/assets/icons/bx_bxl-linkedin.svg" className="p-3 btn rounded-full bg-slate-200" alt="" />
-                    <img src="/src/assets/icons/google 1.svg" className="p-3 btn rounded-full bg-slate-200" alt="" />
+                    <img onClick={handleGoogleLogin} src="/src/assets/icons/google 1.svg" className="p-3 btn rounded-full bg-slate-200" alt="" />
                 </div>
                 <p>Already Have an account? <Link to={`/Login`} className=" underline hover:font-semibold text-[#ff3811]">Sign In</Link></p>
               </div>
