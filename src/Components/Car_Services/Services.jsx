@@ -22,13 +22,13 @@ const Services = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
         {services.map((service) => (
           <div key={service.id}>
-            <div className="rounded-xl bg-base-100 p-7 h-96 shadow-xl">
+            <div className="rounded-xl bg-base-100 p-7 shadow-xl">
               <figure>
                 <img src={service.img} className=" h-60 rounded-xl" alt="Service" />
               </figure>
               <div className="flex justify-between items-end">
                 <div>
-                <h2 className=" text-3xl font-bold my-3">{service.title}</h2>
+                <h2 className="text-3xl font-bold my-3">{service.title}</h2>
                 <h2 className="text-2xl text-[#FF3811] font-semibold"><span>Price: $</span>{service.price}</h2>
                 </div>
                 <div>

@@ -9,7 +9,7 @@ const Banner = () => {
           />
           <div className="absolute  h-full bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
           <div className="text-white">
-            <h1 className="text-4xl md:text-7xl w-3/4 md:w-2/3 lg:w-1/2 pl-12 md:pl-24 pt-20 md:pt-28 font-semibold">Affordable Price For Car Servicing</h1>
+            <h1 className="text-4xl md:text-7xl w-3/4 md:w-3/4 lg:w-1/2 pl-12 md:pl-24 pt-20 md:pt-28 font-semibold">Affordable Price For Car Servicing</h1>
             <p className="text-sm md:text-lg lg:text-xl w-3/4 md:w-2/3 lg:w-1/2 pl-12 md:pl-24 pt-3 md:pt-7">There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
             <div className="pl-12 md:pl-24 pt-3 md:pt-7">
             <button className="px-2 py-2 md:px-4 md:py-3 rounded-md border-2 border-[#FF3811] bg-[#FF3811]">Discover More</button>

@@ -3,19 +3,19 @@ import { Link, useLoaderData } from "react-router-dom";
 const ServiceDetails = () => {
   const service = useLoaderData();
   return (
-    <div>
+    <div className="container mx-auto">
       <div className="relative mb-5">
-        <div className=" absolute rounded-xl h-full bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
-          <h2 className="text-white font-bold md:text-4xl lg:text-7xl md:my-24 lg:my-32 mx-10">
+        <div className="absolute rounded-xl h-full bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
+          <h2 className="text-white font-bold text-4xl md:text-5xl lg:text-7xl my-12 md:my-20 lg:my-32 mx-5 md:mx-10">
             Service Details
           </h2>
         </div>
         <img
           src="/src/assets/images/checkout/checkout.png"
           alt="Checkout"
-          className="w-full"
+          className="w-full h-40 md:h-full"
         />
-        <div className="absolute bottom-0 md:mx-[260px] lg:mx-[470px]">
+        <div className="absolute bottom-0 mx-12 md:mx-[260px] lg:mx-[470px]">
           <div className="w-80 h-0 border-b-[50px] border-[#FF3811] border-l-[50px] border-l-transparent border-r-[50px] border-r-transparent">
             <div className="absolute inset-x-0 bottom-0 text-center text-white transform mb-3">
               <h1 className="text-xl">Home/Service Details</h1>
@@ -26,12 +26,12 @@ const ServiceDetails = () => {
 
       {/* ----------------------------------------- */}
 
-      <div className="grid grid-cols-3 gap-5">
-        <div className=" col-span-2">
+      <div className="grid md:grid-cols-3 gap-3 lg:gap-5">
+        <div className="md:col-span-2">
           <figure>
             <img
               src={service.img}
-              className="w-full h-[50vh] rounded-xl"
+              className="w-full rounded-xl"
               alt="Service"
             />
           </figure>
@@ -51,8 +51,9 @@ const ServiceDetails = () => {
           <p className="text-lg text-justify">{service.description}</p>
           <h1 className="text-5xl font-bold my-8">3 Simple Steps to Process</h1>
           <p className="text-lg text-justify">{service.description}</p>
-          <div className="grid grid-cols-3 gap-3 my-5">
-            <div className="p-10 border-2 flex flex-col items-center justify-center rounded-xl">
+
+          <div className="grid md:grid-cols-3 gap-2 lg:gap-3 my-5">
+            <div className="p-4 lg:p-10 border-2 flex flex-col items-center justify-center rounded-xl">
               <div className="rounded-full text-white w-24 h-24 flex justify-center items-center bg-[#ffd9d1cf] ">
                 <div className="rounded-full text-white font-bold w-16 h-16 flex justify-center items-center bg-[#FF3811]">
                   01
@@ -65,7 +66,7 @@ const ServiceDetails = () => {
                 </p>
               </div>
             </div>
-            <div className="p-10 border-2 flex flex-col items-center justify-center rounded-xl">
+            <div className="p-4 lg:p-10 border-2 flex flex-col items-center justify-center rounded-xl">
               <div className="rounded-full text-white w-24 h-24 flex justify-center items-center bg-[#ffd9d1cf] ">
                 <div className="rounded-full text-white font-bold w-16 h-16 flex justify-center items-center bg-[#FF3811]">
                   02
@@ -78,7 +79,7 @@ const ServiceDetails = () => {
                 </p>
               </div>
             </div>
-            <div className="p-10 border-2 flex flex-col items-center justify-center rounded-xl">
+            <div className="p-4 lg:p-10 border-2 flex flex-col items-center justify-center rounded-xl">
               <div className="rounded-full text-white w-24 h-24 flex justify-center items-center bg-[#ffd9d1cf] ">
                 <div className="rounded-full text-white font-bold w-16 h-16 flex justify-center items-center bg-[#FF3811]">
                   03
@@ -109,7 +110,7 @@ const ServiceDetails = () => {
           </div> */}
 
           <iframe
-            className="w-full h-[70vh] my-5 rounded-xl"
+            className="w-full h-[35vh] lg:h-[70vh] my-5 rounded-xl"
             src="https://www.youtube.com/embed/ZgLJdKn31BE?si=SZ805_cCbiMReOir"
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -119,26 +120,26 @@ const ServiceDetails = () => {
 
         {/* Left Bar */}
         <div>
-          <div className=" flex flex-col rounded-xl p-10 bg-[#F3F3F3]">
+          <div className="flex flex-col rounded-xl p-10 md:p-2 lg:p-10 bg-[#F3F3F3]">
             <h1 className="font-bold text-3xl">Services</h1>
-            <button className="btn flex justify-between font-semibold text-xl bg-white my-3 hover:bg-[#ff3811] hover:text-white">
+            <button className="btn flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white my-3 hover:bg-[#ff3811] hover:text-white">
               Full Car Repair <img src="/src/assets/OrangeAro.svg" alt="" />{" "}
             </button>
-            <button className="btn flex justify-between font-semibold text-xl bg-white my-2 hover:bg-[#ff3811] hover:text-white">
+            <button className="btn flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white my-2 hover:bg-[#ff3811] hover:text-white">
               Engine Repair <img src="/src/assets/OrangeAro.svg" alt="" />{" "}
             </button>
-            <button className="btn flex justify-between font-semibold text-xl bg-white my-2 hover:bg-[#ff3811] hover:text-white">
+            <button className="btn flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white my-2 hover:bg-[#ff3811] hover:text-white">
               Automatic Service <img src="/src/assets/OrangeAro.svg" alt="" />{" "}
             </button>
-            <button className="btn flex justify-between font-semibold text-xl bg-white my-2 hover:bg-[#ff3811] hover:text-white">
+            <button className="btn flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white my-2 hover:bg-[#ff3811] hover:text-white">
               Engine Oil Change <img src="/src/assets/OrangeAro.svg" alt="" />{" "}
             </button>
-            <button className="btn flex justify-between font-semibold text-xl bg-white my-2 hover:bg-[#ff3811] hover:text-white">
+            <button className="btn flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white my-2 hover:bg-[#ff3811] hover:text-white">
               Battery Change <img src="/src/assets/OrangeAro.svg" alt="" />{" "}
             </button>
           </div>
 
-          <div className="bg-black p-10 my-5 rounded-xl ">
+          <div className="bg-black p-10 md:p-4 lg:p-10 my-5 rounded-xl ">
             <h1 className="text-white text-3xl font-bold">Download</h1>
             <div className="flex justify-between my-5">
               <div className="flex gap-3">
@@ -166,7 +167,7 @@ const ServiceDetails = () => {
             </div>
           </div>
 
-          <div className=" bg-black px-12 pt-12 pb-20 flex flex-col items-center justify-center  rounded-xl">
+          <div className=" bg-black p-12 md:py-10 md:px-4 lg:p-12 pb-20 flex flex-col items-center justify-center  rounded-xl">
             <img src="/src/assets/LogoFooter.svg" className="w-40" alt="" />
             <h1 className=" text-white text-2xl font-semibold text-center my-5">
               Need Help? We Are Here To Help You
@@ -178,7 +179,7 @@ const ServiceDetails = () => {
               <p className="font-semibold text-lg text-gray-400">
                 Save up to <span className="text-[#FF3811]">60% off</span>
               </p>
-              <button className="btn absolute left-24 border-0  bg-[#ff3811] text-lg  text-white font-semibold">
+              <button className="btn absolute left-24 md:left-12 lg:left-24 border-0  bg-[#ff3811] text-lg lg:text-lg   text-white font-semibold">
                 Get A Quote
               </button>
             </div>
@@ -187,7 +188,7 @@ const ServiceDetails = () => {
           <h1 className="font-bold text-3xl my-6">Price ${service.price}</h1>
 
           <Link to={`/Checkout/${service._id}`}>
-            <button className="btn bg-[#ff3811] text-white text-lg hover:border-[#ff3811] hover:border-2 hover:bg-white hover:text-[#ff3811] w-full">
+            <button className="btn mb-10 bg-[#ff3811] text-white text-lg hover:border-[#ff3811] hover:border-2 hover:bg-white hover:text-[#ff3811] w-full">
               Process Checkout
             </button>
           </Link>

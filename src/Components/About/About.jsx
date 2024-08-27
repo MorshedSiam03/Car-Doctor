@@ -21,7 +21,7 @@ const About = () => {
                 />
               </div>
             </div>
-            <div className="md:w-2/3 lg:w-1/2 animate__animated animate__fadeInRight">
+            <div className="md:w-4/5 lg:w-1/2 animate__animated animate__fadeInRight">
               <p className="font-bold text-2xl text-[#FF3811]">About Us</p>
               <h1 className="text-5xl lg:w-2/3 md:w-4/5 font-bold">We are qualified & of experience in this field</h1>
               <p className="pt-6 pb-3">
