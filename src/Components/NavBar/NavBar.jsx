@@ -67,13 +67,13 @@ const NavBar = () => {
               {navItems}
             </ul>
           </div>
-          <a className="">
+          <Link to={'/'}>
             <img
               src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/57322f13fb6eed60c434ac2a6dec9aa5c55d33cd/src/assets/icons/logo.svg"
               className="w-16 cursor-auto lg:w-20"
               alt="Logo"
             />
-          </a>
+          </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-1 px-1">{navItems}</ul>

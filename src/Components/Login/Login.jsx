@@ -42,7 +42,7 @@ const Login = () => {
   return (
     <div>
       <div className="hero">
-        <div className="hero-content flex-col  lg:flex-row">
+        <div className="hero-content flex-col md:flex-row">
           <div className="mx-10 hidden md:block">
             <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/images/login/login.svg" alt="" />
           </div>
