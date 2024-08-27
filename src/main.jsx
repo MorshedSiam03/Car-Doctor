@@ -18,6 +18,7 @@ import Services from "./Components/Car_Services/Services";
 import AddProducts from "./Components/Products/AddProducts";
 import AddMember from "./Components/Team/AddMember";
 import AddReview from "./Components/Testimonial/AddReview";
+import PopularProducts from "./Components/Products/PopularProducts";
 
 const router = createBrowserRouter([
   {
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
         element: <AddService></AddService>,
       },
       {
-        path: "/Service",
+        path: "/Services",
         element: <Services></Services>,
       },
       {
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
       {
         path: "/AddProducts",
         element: <AddProducts></AddProducts>,
+      },
+      {
+        path: "/Products",
+        element: <PopularProducts></PopularProducts>,
       },
       {
         path: "/AddMember",

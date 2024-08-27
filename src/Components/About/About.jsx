@@ -2,7 +2,7 @@ import 'animate.css';
 
 const About = () => {
     return (
-      <>
+      <div id='About'>
         <div className="hero mb-40 mt-12 font-Inter">
           <div className="hero-content flex-col gap-36 md:gap-y-48 lg:gap-0 lg:flex-row">
             <div className="lg:w-1/2 relative">
@@ -34,7 +34,7 @@ const About = () => {
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
   };
   

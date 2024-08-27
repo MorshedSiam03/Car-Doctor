@@ -1,35 +1,44 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const NavBar = () => {
   const { user, Logout } = useContext(AuthContext);
+
   const handleLogout = () => {
     Logout()
       .then(() => {})
       .catch((error) => console.error(error));
   };
+
   const navItems = (
     <>
       <li>
-        <Link>Home</Link>
+        <Link to="/">Home</Link>
       </li>
       <li>
-        <Link >About</Link>
+        <Link to="/Products">Product</Link>
       </li>
       <li>
-        <Link to={'/Service'} >Service</Link>
+        <Link to="/Services">Service</Link>
       </li>
       {user?.email && (
         <li>
-          <Link to={'/MyOrders'} >MyOrders</Link>
+          <Link to="/MyOrders">My Orders</Link>
         </li>
       )}
       <li>
-        <Link>Contact</Link>
+        {/* Smooth scroll to the About section */}
+        <HashLink smooth to="#About">About</HashLink>
+      </li>
+      <li>
+        {/* Smooth scroll to the Contact section */}
+        <HashLink smooth to="#Contact">Contact</HashLink>
       </li>
     </>
   );
+
   return (
     <div>
       <div className="navbar my-3 bg-base-100">
@@ -53,7 +62,7 @@ const NavBar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content my-1 bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               {navItems}
             </ul>
@@ -62,12 +71,12 @@ const NavBar = () => {
             <img
               src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/57322f13fb6eed60c434ac2a6dec9aa5c55d33cd/src/assets/icons/logo.svg"
               className="w-16 cursor-auto lg:w-20"
-              alt=""
+              alt="Logo"
             />
           </a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal gap-2 px-1">{navItems}</ul>
+          <ul className="menu menu-horizontal gap-1 px-1">{navItems}</ul>
         </div>
         <div className="navbar-end gap-2">
           {user?.email ? (
@@ -81,11 +90,11 @@ const NavBar = () => {
             </>
           ) : (
             <>
-              <Link to={`/Login`} className="hover:underline text-gray-600">
+              <Link to="/Login" className="hover:underline text-gray-600">
                 SignIn
               </Link>
               <h1 className="font-extralight">|</h1>
-              <Link to={`/SignUp`} className="hover:underline text-gray-600">
+              <Link to="/SignUp" className="hover:underline text-gray-600">
                 SignUp
               </Link>
             </>

@@ -9,7 +9,7 @@ lerna-debug.log*
 
 node_modules
 car-doctor-resources
-Car-Doctor-Server
+# Car-Doctor-Server
 dist
 dist-ssr
 *.local

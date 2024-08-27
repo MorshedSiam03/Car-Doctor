@@ -8,10 +8,10 @@ const Footer = () => {
       Providing reliable tech since 1992
     </p>
     <div className="flex gap-2">
-      <img src="/src/assets/icons/google 1.svg" className="bg-slate-800 p-3 w-10 h-10 rounded-full" alt="" />
-      <img src="/src/assets/icons/bx_bxl-facebook.svg" className="bg-slate-800 p-3 w-10 h-10 rounded-full" alt="" />
-      <img src="/src/assets/icons/bx_bxl-linkedin.svg" className="bg-slate-800 p-3 w-10 h-10 rounded-full" alt="" />
-      <img src="/src/assets/icons/bx_bxl-linkedin.svg" className="bg-slate-800 p-3 w-10 h-10 rounded-full" alt="" />
+      <img src="/src/assets/icons/Group 4889.svg" className=" w-10 h-10 rounded-full" alt="" />
+      <img src="/src/assets/icons/Group 4892.svg" className=" w-10 h-10 rounded-full" alt="" />
+      <img src="/src/assets/icons/Group 4891.svg" className=" w-10 h-10 rounded-full" alt="" />
+      <img src="/src/assets/icons/Group 4893.svg" className="w-10 h-10 rounded-full" alt="" />
     </div>
   </aside>
   <nav>
