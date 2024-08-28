@@ -2,9 +2,11 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 import { AuthContext } from "../../Provider/AuthProvider";
+import DarkModeToggle, { DarkModeContext } from "../DarkMode/DarkModeToggle";
 
 const NavBar = () => {
   const { user, Logout } = useContext(AuthContext);
+  const { darkMode } = useContext(DarkModeContext);
 
   const handleLogout = () => {
     Logout()
@@ -15,7 +17,7 @@ const NavBar = () => {
   const navItems = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <Link to="/" >Home</Link>
       </li>
       <li>
         <Link to="/Products">Product</Link>
@@ -29,11 +31,9 @@ const NavBar = () => {
         </li>
       )}
       <li>
-        {/* Smooth scroll to the About section */}
         <HashLink smooth to="#About">About</HashLink>
       </li>
       <li>
-        {/* Smooth scroll to the Contact section */}
         <HashLink smooth to="#Contact">Contact</HashLink>
       </li>
     </>
@@ -41,7 +41,7 @@ const NavBar = () => {
 
   return (
     <div>
-      <div className="navbar my-3 bg-base-100">
+      <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -62,17 +62,25 @@ const NavBar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content my-1 bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content my-1 bg-base-100 dark:bg-[#151515] rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               {navItems}
             </ul>
           </div>
-          <Link to={'/'}>
-            <img
-              src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/57322f13fb6eed60c434ac2a6dec9aa5c55d33cd/src/assets/icons/logo.svg"
-              className="w-16 cursor-auto lg:w-20"
-              alt="Logo"
-            />
+          <Link to="/">
+            {darkMode ? (
+              <img
+                src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/57322f13fb6eed60c434ac2a6dec9aa5c55d33cd/src/assets/LogoFooter.svg"
+                className="w-16 cursor-auto lg:w-20"
+                alt="White Logo"
+              />
+            ) : (
+              <img
+                src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/57322f13fb6eed60c434ac2a6dec9aa5c55d33cd/src/assets/icons/logo.svg"
+                className="w-16 cursor-auto lg:w-20"
+                alt="Dark Logo"
+              />
+            )}
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -83,25 +91,28 @@ const NavBar = () => {
             <>
               <Link
                 onClick={handleLogout}
-                className="hover:underline text-gray-600"
+                className="hover:underline text-gray-600 dark:text-white"
               >
                 Logout
               </Link>
             </>
           ) : (
             <>
-              <Link to="/Login" className="hover:underline text-gray-600">
+              <Link to="/Login" className="hover:underline text-gray-600 dark:text-white">
                 SignIn
               </Link>
               <h1 className="font-extralight">|</h1>
-              <Link to="/SignUp" className="hover:underline text-gray-600">
+              <Link to="/SignUp" className="hover:underline text-gray-600 dark:text-white">
                 SignUp
               </Link>
             </>
           )}
+          <div className=" hidden md:block">
           <a className="btn bg-transparent text-[#FF3811] border-2 border-[#FF3811] hover:bg-[#FF3811] hover:border-0 hover:text-white hover:font-semibold">
             Appointment
           </a>
+          </div>
+          <DarkModeToggle />
         </div>
       </div>
     </div>

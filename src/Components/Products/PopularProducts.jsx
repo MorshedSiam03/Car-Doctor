@@ -28,7 +28,7 @@ const PopularProducts = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
         {products.map((products) => (
           <div key={products.id}>
-            <div className="rounded-xl bg-base-100 p-8  shadow-xl">
+            <div className="rounded-xl bg-base-100 p-8 dark:bg-[#151515]  shadow-xl">
               <figure>
                 <img
                   src={products.img}
@@ -57,8 +57,8 @@ const PopularProducts = () => {
           </div>
         ))}
       </div>
-      <div className="flex justify-center mb-10">
-        <button className="mt-4 p-3 rounded-md font-semibold  bg-transparent border-2 border-[#ff3811] text-[#ff3811] hover:bg-[#ff3811] hover:text-white hover:border-[#ff3811]">
+      <div className="flex justify-center my-10">
+        <button className="mt-4 p-3 rounded-md font-semibold dark:text-[#ff3811]  bg-transparent dark:bg-transparent border-2 border-[#ff3811] text-[#ff3811] hover:bg-[#ff3811] hover:text-white hover:border-[#ff3811] dark:hover:bg-[#ff3811] dark:hover:text-white dark:hover:border-[#ff3811]">
           More Products
         </button>
       </div>

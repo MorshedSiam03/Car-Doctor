@@ -30,7 +30,7 @@ const About = () => {
               <p className="pb-6">
               the majority have suffered alteration in some form, by injected humour, or randomized words which do not look even slightly believable. 
               </p>
-              <button className="p-4 rounded-md text-white bg-[#FF3811]">Get More Info</button>
+              <button className="p-4 rounded-md text-white dark:bg-[#FF3811] bg-[#FF3811]">Get More Info</button>
             </div>
           </div>
         </div>

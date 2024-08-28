@@ -8,29 +8,33 @@ const MyOrders = () => {
   const [orders, setOrders] = useState([]);
 
   const url = `https://car-doctor-server-eosin-sigma.vercel.app/Orders?email=${user?.email}`;
+
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
-      .then((data) => setOrders(data));}, [url]);
+      .then((data) => {
+        // Additional filtering on the client side
+        const filteredOrders = data.filter(order => order.email === user?.email);
+        setOrders(filteredOrders);
+      });
+  }, [url, user?.email]);
 
-  const handleConfirm= id =>{
-    fetch(`https://car-doctor-server-eosin-sigma.vercel.app/Orders/${id}`,{
+  const handleConfirm = id => {
+    fetch(`https://car-doctor-server-eosin-sigma.vercel.app/Orders/${id}`, {
       method: 'PATCH',
-      headers: { 'content-type': 'application/json'},
-      body: JSON.stringify({status: 'Confirm'})
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status: 'Confirm' })
     })
-    .then(res=>res.json())
-    .then(data=>{
-      if(data.modifiedCount > 0){
-        //update State
-        const remaining = orders.filter(order => order._id !== id);
-        const updated = orders.find(order => order._id === id);
-        updated.status = 'Confirm'
-        const newOrders = [updated, ...remaining]
-        setOrders(newOrders);
-      }
-    })
-  }
+      .then(res => res.json())
+      .then(data => {
+        if (data.modifiedCount > 0) {
+          const remaining = orders.filter(order => order._id !== id);
+          const updated = orders.find(order => order._id === id);
+          updated.status = 'Confirm';
+          setOrders([updated, ...remaining]);
+        }
+      });
+  };
 
   const handleDelete = id => {
     Swal.fire({
@@ -43,35 +47,31 @@ const MyOrders = () => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-
         fetch(`https://car-doctor-server-eosin-sigma.vercel.app/Orders/${id}`, {
           method: 'DELETE'
         })
-        .then(res=>res.json())
-        .then(data=>{
-          console.log(data);
-          if(data.deletedCount>0){
-            Swal.fire({
-            title: "Deleted!",
-            text: "Your file has been deleted.",
-            icon: "success"
+          .then(res => res.json())
+          .then(data => {
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success"
+              });
+              const remainingOrders = orders.filter(order => order._id !== id);
+              setOrders(remainingOrders);
+            }
           });
-          const remainings = orders.filter(order => order._id !== id);
-          setOrders(remainings);
-        }
-        })
-
-        
       }
     });
-  }
+  };
 
   return (
     <div>
-        <div className="relative mb-5">
-        <div className=" absolute rounded-xl h-full bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
+      <div className="relative mb-5">
+        <div className="absolute rounded-xl h-full bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
           <h2 className="text-white font-bold md:text-4xl lg:text-7xl md:my-24 lg:my-32 mx-10">
-            Cart Details
+            Order Details
           </h2>
         </div>
         <img
@@ -89,12 +89,9 @@ const MyOrders = () => {
       </div>
       <div className="overflow-x-auto">
         <table className="table">
-          {/* head */}
           <thead>
-            <tr className="text-xl " >
-              <th>
-                Action
-              </th>
+            <tr className="text-xl dark:text-white">
+              <th>Action</th>
               <th>Service</th>
               <th>Customer</th>
               <th>Price</th>
@@ -102,15 +99,14 @@ const MyOrders = () => {
             </tr>
           </thead>
           <tbody>
-            {
-                orders.map(order => <MyOrderRow
+            {orders.map(order => (
+              <MyOrderRow
                 key={order._id}
                 order={order}
                 handleDelete={handleDelete}
-                handleConfirm= {handleConfirm}
-                >
-                </MyOrderRow>)
-            }
+                handleConfirm={handleConfirm}
+              />
+            ))}
           </tbody>
         </table>
       </div>

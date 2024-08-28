@@ -2,3 +2,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* General styles */
+body {
+  @apply bg-white text-black;
+}
+
+button {
+  @apply bg-gray-200 text-black;
+}
+
+/* Dark mode styles */
+.dark body {
+  @apply bg-black text-white;
+}
+
+.dark button {
+  @apply bg-gray-700 text-white;
+}

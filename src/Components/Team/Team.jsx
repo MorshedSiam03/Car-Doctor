@@ -58,7 +58,7 @@ const Team = () => {
       >
         {teams.map((team) => (
           <SwiperSlide key={team.id}>
-            <div className="rounded-xl mb-10 bg-base-100 p-8 shadow-xl">
+            <div className="rounded-xl mb-10 bg-base-100 dark:bg-[#151515] p-8 shadow-xl">
               <figure>
                 <img
                   src={team.img}

@@ -19,6 +19,7 @@ import AddProducts from "./Components/Products/AddProducts";
 import AddMember from "./Components/Team/AddMember";
 import AddReview from "./Components/Testimonial/AddReview";
 import PopularProducts from "./Components/Products/PopularProducts";
+import DarkModeToggle from "./Components/DarkMode/DarkModeToggle";
 
 const router = createBrowserRouter([
   {
@@ -49,16 +50,26 @@ const router = createBrowserRouter([
       {
         path: "/Services/:id",
         element: <ServiceDetails></ServiceDetails>,
-        loader: ({params}) => fetch(`https://car-doctor-server-eosin-sigma.vercel.app/services/${params.id}`)
+        loader: ({ params }) =>
+          fetch(
+            `https://car-doctor-server-eosin-sigma.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "/Checkout/:id",
         element: <Checkout></Checkout>,
-        loader: ({params}) => fetch(`https://car-doctor-server-eosin-sigma.vercel.app/services/${params.id}`)
+        loader: ({ params }) =>
+          fetch(
+            `https://car-doctor-server-eosin-sigma.vercel.app/services/${params.id}`
+          ),
       },
       {
         path: "/MyOrders",
-        element: <PrivateRoute><MyOrders></MyOrders></PrivateRoute>,
+        element: (
+          <PrivateRoute>
+            <MyOrders></MyOrders>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/AddProducts",
@@ -83,7 +94,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <DarkModeToggle>
+        <RouterProvider router={router} />
+      </DarkModeToggle>
     </AuthProvider>
   </React.StrictMode>
 );

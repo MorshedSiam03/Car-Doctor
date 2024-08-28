@@ -7,7 +7,7 @@ const {_id, CustomerName, ServiceName, img, Price, ServiceId, email, status } = 
       {/* row 1 */}
       <tr>
         <th>
-          <button onClick={() => handleDelete(_id)} className="btn btn-square btn-outline">
+          <button onClick={() => handleDelete(_id)} className="btn btn-square dark:bg-transparent btn-outline">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -40,14 +40,14 @@ const {_id, CustomerName, ServiceName, img, Price, ServiceId, email, status } = 
         <td className="font-semibold text-xl">
           {CustomerName}
           <br />
-          <span className="badge badge-ghost badge-sm">{email}</span>
+          <span className="badge badge-ghost dark:bg-gray-300 dark:border-0 badge-sm">{email}</span>
         </td>
         <td className="font-semibold text-xl">$ {Price}</td>
         <th>
           {
             status === 'Confirm' ?
-            <button  className="btn hover:bg-green-600 bg-green-600 text-white">Confirmed</button> :
-            <button onClick={() => handleConfirm(_id)} className="btn bg-[#ff3811] text-white">Pending</button>}
+            <button  className="btn hover:bg-green-600 bg-green-600 dark:bg-green-600 text-white">Confirmed</button> :
+            <button onClick={() => handleConfirm(_id)} className="btn bg-[#ff3811] dark:bg-[#ff3811] text-white">Pending</button>}
         </th>
       </tr>
     </>

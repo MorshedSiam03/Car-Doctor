@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Checkout = () => {
   const service = useLoaderData();
@@ -38,6 +39,24 @@ const Checkout = () => {
     .then(res => res.json())
     .then(data =>{
         console.log(data);
+        if(data.insertedId){
+          Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Your Service is Added",
+          showConfirmButton: false,
+          timer: 1500
+        });
+        form.reset();
+      }
+      else {
+          Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Something went wrong!",
+              footer: '<a href="#">Why do I have this issue?</a>'
+            });
+      }
     })
   }
 
@@ -64,16 +83,16 @@ const Checkout = () => {
       </div>
 
       <div>
-        <div className="p-24 my-20 bg-base-200 rounded-lg">
+        <div className="p-24 my-20 bg-base-200 dark:bg-[#151515] rounded-lg">
           <div className="">
-            <div className="flex justify-between font-bold text-2xl mb-5 " >
+            <div className="flex justify-between font-bold  text-2xl mb-5 " >
                 <h1>Service Name: {service.title}</h1>
                 <h1>Due Amount: {'$ '+ service.price}</h1>
             </div>
             <div className="w-full">
               <form onSubmit={handleCheckout} className="">
-                <div className="grid md:grid-cols-2 gap-3">
-                  <div className="form-control">
+                <div className="grid md:grid-cols-2 gap-3   dark:text-gray-700">
+                  <div className="form-control ">
                     <input
                       type="text"
                       name="FName"
@@ -83,7 +102,7 @@ const Checkout = () => {
                       required
                     />
                   </div>
-                  <div className="form-control">
+                  <div className="form-control ">
                     <input
                       type="text"
                       name="LName"
@@ -100,7 +119,7 @@ const Checkout = () => {
                       required
                     />
                   </div>
-                  <div className="form-control">
+                  <div className="form-control ">
                     <input
                       type="email"
                       name="email"
@@ -119,7 +138,7 @@ const Checkout = () => {
                   </div>
                 </div>
                 <div className="form-control mt-3">
-                  <button className="btn bg-[#FF3811] text-white">Order Confirm</button>
+                  <button className="btn dark:bg-[#FF3811] bg-[#FF3811] hover:bg-transparent dark:hover:bg-transparent text-white">Order Confirm</button>
                 </div>
               </form>
             </div>

@@ -39,12 +39,12 @@ const SignUp = () => {
           <div className="mx-10 hidden md:block">
             <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/images/login/login.svg" alt="" />
           </div>
-          <div className="card bg-base-100 w-full p-5 md:max-w-sm lg:max-w-md border-2">
-            <form onSubmit={handleSignUp} className="card-body">
+          <div className="card bg-base-100 dark:bg-[#151515] w-full p-5 md:max-w-sm lg:max-w-md border-2">
+            <form onSubmit={handleSignUp} className="card-body dark:text-gray-100">
                 <h1 className=" text-2xl font-semibold text-center" >Register</h1>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text font-bold">Name</span>
+                  <span className="label-text dark:text-gray-100 font-bold">Name</span>
                 </label>
                 <input
                   type="text"
@@ -56,7 +56,7 @@ const SignUp = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text font-bold">Email</span>
+                  <span className="label-text dark:text-gray-100 font-bold">Email</span>
                 </label>
                 <input
                   type="email"
@@ -68,7 +68,7 @@ const SignUp = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text font-bold">Password</span>
+                  <span className="label-text dark:text-gray-100 font-bold">Password</span>
                 </label>
                 <input
                   type="password"
@@ -79,7 +79,7 @@ const SignUp = () => {
                 />
               </div>
               <div className="form-control mt-3">
-                <button className="btn bg-[#ff3811] text-white">Sign Up</button>
+                <button className="btn bg-[#ff3811] dark:bg-[#ff3811]  text-white">Sign Up</button>
               </div>
               <div className=" text-center">
                 <p className="text-[15px]" >Or Sign In With</p>

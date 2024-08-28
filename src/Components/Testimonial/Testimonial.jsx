@@ -52,7 +52,7 @@ const Testimonial = () => {
       >
         {reviews.map((review) => (
           <SwiperSlide  key={review.id}>
-            <div className="bg-white p-10 lg:h-72 mb-10 rounded-lg shadow-lg">
+            <div className="bg-white dark:bg-[#151515] p-10 lg:h-72 mb-10 rounded-lg shadow-lg">
               <div className="flex items-center">
                 <img
                   src={review.image}
@@ -72,7 +72,7 @@ const Testimonial = () => {
                   alt="Quote"
                 />
               </div>
-              <p className="text-gray-700 mt-2 p-2">{review.reviewText}</p>
+              <p className="text-gray-700 dark:text-white mt-2 p-2">{review.reviewText}</p>
             </div>
           </SwiperSlide>
         ))}

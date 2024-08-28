@@ -1,7 +1,14 @@
+import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const ServiceDetails = () => {
   const service = useLoaderData();
+  const [services, setServices] = useState([]);
+  useEffect(() => {
+    fetch("https://car-doctor-server-eosin-sigma.vercel.app/services")
+      .then((res) => res.json())
+      .then((data) => setServices(data));
+  }, []);
   return (
     <div className="container mx-auto">
       <div className="relative mb-5">
@@ -41,10 +48,12 @@ const ServiceDetails = () => {
             {service.facility.map((facility, index) => (
               <div
                 key={index}
-                className="bg-slate-100 border-t-4 border-[#FF3811] rounded-xl p-5"
+                className="bg-slate-100 dark:bg-[#151515] border-t-4 border-[#FF3811] rounded-xl p-5"
               >
                 <h2 className="text-3xl my-2 font-bold">{facility.name}</h2>
-                <p className="text-lg text-gray-500 my-2">{facility.details}</p>
+                <p className="text-lg text-gray-500 dark:text-gray-300 my-2">
+                  {facility.details}
+                </p>
               </div>
             ))}
           </div>
@@ -61,7 +70,7 @@ const ServiceDetails = () => {
               </div>
               <div className="text-center">
                 <h1 className="font-bold text-2xl my-5">STEP ONE</h1>
-                <p className="text-lg text-gray-500 my-2">
+                <p className="text-lg text-gray-500 dark:text-gray-300  my-2">
                   It uses a dictionary of over 200.
                 </p>
               </div>
@@ -74,7 +83,7 @@ const ServiceDetails = () => {
               </div>
               <div className="text-center">
                 <h1 className="font-bold text-2xl my-5">STEP TWO</h1>
-                <p className="text-lg text-gray-500 my-2">
+                <p className="text-lg text-gray-500 dark:text-gray-300  my-2">
                   It uses a dictionary of over 200.
                 </p>
               </div>
@@ -87,7 +96,7 @@ const ServiceDetails = () => {
               </div>
               <div className="text-center">
                 <h1 className="font-bold text-2xl my-5">STEP THREE</h1>
-                <p className="text-lg text-gray-500 my-2">
+                <p className="text-lg text-gray-500 dark:text-gray-300  my-2">
                   It uses a dictionary of over 200.
                 </p>
               </div>
@@ -120,66 +129,80 @@ const ServiceDetails = () => {
 
         {/* Left Bar */}
         <div>
-          <div className="flex flex-col rounded-xl p-10 md:p-2 lg:p-10 bg-[#F3F3F3]">
+          <div className="flex flex-col rounded-xl p-10 md:p-2 lg:p-10 bg-[#F3F3F3] dark:bg-[#151515]">
             <h1 className="font-bold text-3xl">Services</h1>
-            <button className="btn flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white my-3 hover:bg-[#ff3811] hover:text-white">
-              Full Car Repair <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/OrangeAro.svg" alt="" />{" "}
-            </button>
-            <button className="btn flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white my-2 hover:bg-[#ff3811] hover:text-white">
-              Engine Repair <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/OrangeAro.svg" alt="" />{" "}
-            </button>
-            <button className="btn flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white my-2 hover:bg-[#ff3811] hover:text-white">
-              Automatic Service <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/OrangeAro.svg" alt="" />{" "}
-            </button>
-            <button className="btn flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white my-2 hover:bg-[#ff3811] hover:text-white">
-              Engine Oil Change <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/OrangeAro.svg" alt="" />{" "}
-            </button>
-            <button className="btn flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white my-2 hover:bg-[#ff3811] hover:text-white">
-              Battery Change <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/OrangeAro.svg" alt="" />{" "}
-            </button>
+            {services.map((service) => (
+              <div key={service.id}>
+                <Link to={`/Services/${service._id}`}>
+                  <button className="btn w-full flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white  my-3 hover:bg-[#ff3811] hover:text-white">
+                    {service.title}{" "}
+                    <img
+                      src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/OrangeAro.svg"
+                      alt=""
+                    />{" "}
+                  </button>
+                </Link>
+              </div>
+            ))}
           </div>
 
-          <div className="bg-black p-10 md:p-4 lg:p-10 my-5 rounded-xl ">
+          <div className="bg-black dark:bg-[#151515] p-10 md:p-4 lg:p-10 my-5 rounded-xl ">
             <h1 className="text-white text-3xl font-bold">Download</h1>
             <div className="flex justify-between my-5">
               <div className="flex gap-3">
-                <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/icons/Doc.svg" alt="" />
+                <img
+                  src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/icons/Doc.svg"
+                  alt=""
+                />
                 <div className="text-white">
                   <h1 className="text-lg font-semibold">Our Brochure</h1>
                   <p className="text-gray-400 hover:underline">Download</p>
                 </div>
               </div>
-              <button className="btn bg-[#ff3811] border-0">
-                <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/icons/Vector%202.png" alt="" />
+              <button className="btn bg-[#ff3811] dark:bg-[#ff3811] dark:hover:bg-transparent dark:hover:border-2 border-0">
+                <img
+                  src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/icons/Vector%202.png"
+                  alt=""
+                />
               </button>
             </div>
             <div className="flex justify-between mt-4">
               <div className="flex gap-3">
-                <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/icons/Doc.svg" alt="" />
+                <img
+                  src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/icons/Doc.svg"
+                  alt=""
+                />
                 <div className="text-white">
                   <h1 className="text-lg font-semibold">Company Details</h1>
                   <p className="text-gray-400 hover:underline">Download</p>
                 </div>
               </div>
-              <button className="btn bg-[#ff3811] border-0">
-                <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/icons/Vector%202.png" alt="" />
+              <button className="btn bg-[#ff3811] dark:bg-[#ff3811] dark:hover:bg-transparent dark:hover:border-2 border-0">
+                <img
+                  src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/icons/Vector%202.png"
+                  alt=""
+                />
               </button>
             </div>
           </div>
 
-          <div className=" bg-black p-12 md:py-10 md:px-4 lg:p-12 pb-20 flex flex-col items-center justify-center  rounded-xl">
-            <img src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/LogoFooter.svg" className="w-40" alt="" />
+          <div className=" bg-black dark:bg-[#151515] p-12 md:py-10 md:px-4 lg:p-12 pb-20 flex flex-col items-center justify-center  rounded-xl">
+            <img
+              src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/LogoFooter.svg"
+              className="w-40"
+              alt=""
+            />
             <h1 className=" text-white text-2xl font-semibold text-center my-5">
               Need Help? We Are Here To Help You
             </h1>
             <div className="w-full p-5 bg-white text-center rounded-xl relative">
-              <h1 className="font-bold text-2xl">
+              <h1 className="font-bold dark:text-black text-2xl">
                 <span className="text-[#FF3811]">Car Doctor</span> Special
               </h1>
               <p className="font-semibold text-lg text-gray-400">
                 Save up to <span className="text-[#FF3811]">60% off</span>
               </p>
-              <button className="btn absolute left-24 md:left-12 lg:left-24 border-0  bg-[#ff3811] text-lg lg:text-lg   text-white font-semibold">
+              <button className="btn absolute left-24 md:left-12 lg:left-24 border-0  dark:bg-[#ff3811]  bg-[#ff3811] text-lg lg:text-lg   text-white font-semibold">
                 Get A Quote
               </button>
             </div>
@@ -188,7 +211,7 @@ const ServiceDetails = () => {
           <h1 className="font-bold text-3xl my-6">Price ${service.price}</h1>
 
           <Link to={`/Checkout/${service._id}`}>
-            <button className="btn mb-10 bg-[#ff3811] text-white text-lg hover:border-[#ff3811] hover:border-2 hover:bg-white hover:text-[#ff3811] w-full">
+            <button className="btn mb-10 bg-[#ff3811] dark:bg-[#ff3811] dark:hover:bg-transparent text-white text-lg hover:border-[#ff3811] hover:border-2 hover:bg-white hover:text-[#ff3811] w-full">
               Process Checkout
             </button>
           </Link>
