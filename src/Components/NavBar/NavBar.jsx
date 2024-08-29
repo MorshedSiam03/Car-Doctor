@@ -36,6 +36,9 @@ const NavBar = () => {
       <li>
         <HashLink smooth to="#Contact">Contact</HashLink>
       </li>
+      <li>
+        <Link to={'/AddReview'} >Review</Link>
+      </li>
     </>
   );
 

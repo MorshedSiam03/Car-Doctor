@@ -1,57 +1,55 @@
 import Swal from "sweetalert2";
 
 const AddProducts = () => {
+  const handleAddProduct = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const title = form.title.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const img = form.img.value;
+    const description = form.description.value;
+    const product = {
+      title,
+      price,
+      rating,
+      img,
+      description,
+    };
+    console.log(product);
 
-    const handleAddProduct = (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const title = form.title.value;
-        const price = form.price.value;
-        const type = form.type.value;
-        const img = form.img.value;
-        const description = form.description.value;
-        const product = {
-          title, 
-          price, 
-          type, 
-          img, 
-          description, 
-          };
-        console.log(product);
-    
-        fetch('https://car-doctor-server-eosin-sigma.vercel.app/products', {
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json',
-          },
-          body: JSON.stringify(product),
-        })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            if(data.insertedId){
-                Swal.fire({
-                position: "center",
-                icon: "success",
-                title: "Your Product is Added",
-                showConfirmButton: false,
-                timer: 1500
-              });
-              form.reset();
-            }
-            else {
-                Swal.fire({
-                    icon: "error",
-                    title: "Oops...",
-                    text: "Something went wrong!",
-                    footer: '<a href="#">Why do I have this issue?</a>'
-                  });
-            }
+    fetch("https://car-doctor-server-eosin-sigma.vercel.app/products", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(product),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "Your Product is Added",
+            showConfirmButton: false,
+            timer: 1500,
           });
-      };
+          form.reset();
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Something went wrong!",
+            footer: '<a href="#">Why do I have this issue?</a>',
+          });
+        }
+      });
+  };
 
-    return (
-        <div>
+  return (
+    <div>
       <div className="relative mb-5">
         <div className=" absolute rounded-xl h-full bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
           <h2 className="text-white font-bold md:text-4xl lg:text-6xl md:my-24 lg:my-32 mx-10">
@@ -93,15 +91,18 @@ const AddProducts = () => {
                       name="price"
                       placeholder="Product Price"
                       className="input"
+                      min="1"
                       required
                     />
                   </div>
-                  <div className="form-control">
+                  <div className="mb-4">
                     <input
-                      type="text"
-                      name="type"
-                      placeholder="Product Type"
-                      className="input"
+                      type="number"
+                      name="rating"
+                      placeholder="Rating (1-5)"
+                      className="input w-full dark:bg-gray-300 "
+                      min="1"
+                      max="5"
                       required
                     />
                   </div>
@@ -133,7 +134,7 @@ const AddProducts = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default AddProducts;

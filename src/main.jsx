@@ -57,7 +57,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/Checkout/:id",
-        element: <Checkout></Checkout>,
+        element: (
+          <PrivateRoute>
+            <Checkout></Checkout>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
           fetch(
             `https://car-doctor-server-eosin-sigma.vercel.app/services/${params.id}`
@@ -85,7 +89,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/AddReview",
-        element: <AddReview></AddReview>,
+        element: (
+          <PrivateRoute>
+            <AddReview></AddReview>
+          </PrivateRoute>
+        ),
       },
     ],
   },

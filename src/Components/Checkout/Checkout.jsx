@@ -64,17 +64,17 @@ const Checkout = () => {
     <div>
       <div className="relative mb-5">
         <div className=" absolute rounded-xl h-full bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
-          <h2 className="text-white font-bold md:text-4xl lg:text-7xl md:my-24 lg:my-32 mx-10">
+          <h2 className="text-white font-bold text-4xl md:text-5xl lg:text-7xl my-12 md:my-20 lg:my-32 mx-5 md:mx-10">
             Checkout
           </h2>
         </div>
         <img
           src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/images/checkout/checkout.png"
           alt="Checkout"
-          className="w-full"
+          className="w-full h-40 md:h-full"
         />
-        <div className="absolute bottom-0 md:mx-[260px] lg:mx-[470px]">
-          <div className="w-80 h-0 border-b-[50px] border-[#FF3811] border-l-[50px] border-l-transparent border-r-[50px] border-r-transparent">
+        <div className="absolute bottom-0 mx-12 md:mx-[260px] lg:mx-[470px]">
+          <div className="w-80 border-b-[50px] border-[#FF3811] border-l-[50px] border-l-transparent border-r-[50px] border-r-transparent">
             <div className="absolute inset-x-0 bottom-0 text-center text-white transform mb-3">
               <h1 className="text-xl">Home/Checkout</h1>
             </div>
@@ -83,15 +83,15 @@ const Checkout = () => {
       </div>
 
       <div>
-        <div className="p-24 my-20 bg-base-200 dark:bg-[#151515] rounded-lg">
+        <div className="p-4 py-8 md:p-24 my-20 bg-base-200 dark:bg-[#151515] rounded-lg">
           <div className="">
-            <div className="flex justify-between font-bold  text-2xl mb-5 " >
+            <div className="md:flex justify-between font-bold text-xl  md:text-2xl mb-5 " >
                 <h1>Service Name: {service.title}</h1>
                 <h1>Due Amount: {'$ '+ service.price}</h1>
             </div>
             <div className="w-full">
               <form onSubmit={handleCheckout} className="">
-                <div className="grid md:grid-cols-2 gap-3   dark:text-gray-700">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 dark:text-gray-700">
                   <div className="form-control ">
                     <input
                       type="text"
@@ -106,7 +106,7 @@ const Checkout = () => {
                     <input
                       type="text"
                       name="LName"
-                      placeholder="Last Name"
+                      placeholder="Address"
                       className="input"
                     />
                   </div>
@@ -129,7 +129,7 @@ const Checkout = () => {
                       required
                     />
                   </div>
-                  <div className="form-control col-span-2">
+                  <div className="form-control md:col-span-2">
                     <textarea
                       placeholder="Your Massage"
                       name="Massage"

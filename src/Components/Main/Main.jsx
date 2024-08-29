@@ -6,11 +6,13 @@ import ScrollToTop from "../ScrollToTop/ScrollToTop";
 const Main = () => {
     ScrollToTop();
     return (
+        <>
         <div className="max-w-7xl mx-auto font-Inter">
             <NavBar></NavBar>
-            <Outlet></Outlet>
-            <Footer></Footer>
+            <Outlet></Outlet>   
         </div>
+        <Footer></Footer>
+        </>
     );
 };
 

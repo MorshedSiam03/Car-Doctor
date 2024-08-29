@@ -134,7 +134,7 @@ const ServiceDetails = () => {
             {services.map((service) => (
               <div key={service.id}>
                 <Link to={`/Services/${service._id}`}>
-                  <button className="btn w-full flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white  my-3 hover:bg-[#ff3811] hover:text-white">
+                  <button className="btn w-full flex justify-between font-semibold text-xl md:text-lg lg:text-xl bg-white dark:bg-transparent  my-3 hover:bg-[#ff3811] dark:hover:bg-[#ff3811] hover:text-white">
                     {service.title}{" "}
                     <img
                       src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/2c0f959bf870fb627c5ec1b9fad6e6888e227b6c/src/assets/OrangeAro.svg"

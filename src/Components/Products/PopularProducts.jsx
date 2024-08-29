@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
-import { FaStar } from "react-icons/fa";
 
 const PopularProducts = () => {
+  const [products, setProducts] = useState([]);
+  const [showMore, setShowMore] = useState(false);
 
-    const [products, setProducts] = useState([]);
-    useEffect(() => {
-      fetch("https://car-doctor-server-eosin-sigma.vercel.app/products")
-        .then((res) => res.json())
-        .then((data) => setProducts(data));
-    }, []);
+  useEffect(() => {
+    fetch("https://car-doctor-server-eosin-sigma.vercel.app/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data));
+  }, []);
+
+  const displayedProducts = showMore ? products : products.slice(0, 6);
 
   return (
     <>
@@ -18,38 +20,36 @@ const PopularProducts = () => {
           Browse Our Products
         </h1>
         <p className="p-4 text-center text-gray-500">
-          The majority have suffered alteration in some form, by injected
-          humour, or randomised  words which do not look even slightly
-          believable.{" "}
+          The majority have suffered alteration in some form, by injected humour, 
+          or randomised words which do not look even slightly believable.
         </p>
       </div>
 
-     
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5">
-        {products.map((products) => (
-          <div key={products.id}>
-            <div className="rounded-xl bg-base-100 p-8 dark:bg-[#151515]  shadow-xl">
+        {displayedProducts.map((product) => (
+          <div key={product.id}>
+            <div className="rounded-xl bg-base-100 p-8 dark:bg-[#151515] shadow-xl">
               <figure>
                 <img
-                  src={products.img}
-                // src="/src/assets/images/products/1.png"
-                  className="h-80 rounded-xl p-12 mx-auto w-full bg-slate-200 "
-                  alt="Service"
+                  src={product.img}
+                  className="h-80 rounded-xl p-12 mx-auto w-full bg-slate-200"
+                  alt="Product"
                 />
               </figure>
               <div className="flex justify-center">
                 <div>
-                <div className="flex justify-center mt-5 my-3 gap-2 ">
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                </div>
-                  <h2 className="text-3xl flex justify-center font-bold my-1">{products.title}</h2>
+                  <div className="flex justify-center mt-2">
+                    <p className="text-yellow-500 text-3xl">
+                      {"★".repeat(product.rating)}
+                      {"☆".repeat(5 - product.rating)}
+                    </p>
+                  </div>
+                  <h2 className="text-3xl flex justify-center font-bold my-1">
+                    {product.title}
+                  </h2>
                   <h2 className="text-2xl flex justify-center text-[#FF3811] font-semibold">
                     <span>Price: $</span>
-                    {products.price}
+                    {product.price}
                   </h2>
                 </div>
               </div>
@@ -57,9 +57,13 @@ const PopularProducts = () => {
           </div>
         ))}
       </div>
+
       <div className="flex justify-center my-10">
-        <button className="mt-4 p-3 rounded-md font-semibold dark:text-[#ff3811]  bg-transparent dark:bg-transparent border-2 border-[#ff3811] text-[#ff3811] hover:bg-[#ff3811] hover:text-white hover:border-[#ff3811] dark:hover:bg-[#ff3811] dark:hover:text-white dark:hover:border-[#ff3811]">
-          More Products
+        <button
+          onClick={() => setShowMore(!showMore)}
+          className="mt-4 p-3 rounded-md font-semibold dark:text-[#ff3811] bg-transparent dark:bg-transparent border-2 border-[#ff3811] text-[#ff3811] hover:bg-[#ff3811] hover:text-white hover:border-[#ff3811] dark:hover:bg-[#ff3811] dark:hover:text-white dark:hover:border-[#ff3811]"
+        >
+          {showMore ? "Show Less" : "More Products"}
         </button>
       </div>
     </>
