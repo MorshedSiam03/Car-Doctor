@@ -1,12 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { HashLink } from 'react-router-hash-link';
+import { HashLink } from "react-router-hash-link";
 import { AuthContext } from "../../Provider/AuthProvider";
 import DarkModeToggle, { DarkModeContext } from "../DarkMode/DarkModeToggle";
 
 const NavBar = () => {
   const { user, Logout } = useContext(AuthContext);
   const { darkMode } = useContext(DarkModeContext);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const handleLogout = () => {
     Logout()
@@ -14,29 +15,33 @@ const NavBar = () => {
       .catch((error) => console.error(error));
   };
 
+  const handleNavItemClick = () => {
+    setIsDropdownOpen(false); // Close the dropdown when a nav item is clicked
+  };
+
   const navItems = (
     <>
-      <li>
-        <Link to="/" >Home</Link>
+      <li onClick={handleNavItemClick}>
+        <Link to="/">Home</Link>
       </li>
-      <li>
+      <li onClick={handleNavItemClick}>
         <Link to="/Products">Product</Link>
       </li>
-      <li>
+      <li onClick={handleNavItemClick}>
         <Link to="/Services">Service</Link>
       </li>
       {user?.email && (
-        <li>
+        <li onClick={handleNavItemClick}>
           <Link to="/MyOrders">My Orders</Link>
         </li>
       )}
-      <li>
+      <li onClick={handleNavItemClick}>
         <HashLink smooth to="#About">About</HashLink>
       </li>
-      <li>
+      <li onClick={handleNavItemClick}>
         <HashLink smooth to="#Contact">Contact</HashLink>
       </li>
-      <li>
+      <li onClick={handleNavItemClick}>
         <Link to={'/AddReview'} >Review</Link>
       </li>
     </>
@@ -47,7 +52,12 @@ const NavBar = () => {
       <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost lg:hidden"
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -63,12 +73,14 @@ const NavBar = () => {
                 />
               </svg>
             </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content my-1 bg-base-100 dark:bg-[#151515] rounded-box z-[1] mt-3 w-52 p-2 shadow"
-            >
-              {navItems}
-            </ul>
+            {isDropdownOpen && (
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content my-1 bg-base-100 dark:bg-[#151515] rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              >
+                {navItems}
+              </ul>
+            )}
           </div>
           <Link to="/">
             {darkMode ? (
@@ -110,10 +122,10 @@ const NavBar = () => {
               </Link>
             </>
           )}
-          <div className=" hidden md:block">
-          <a className="btn bg-transparent text-[#FF3811] border-2 border-[#FF3811] hover:bg-[#FF3811] hover:border-0 hover:text-white hover:font-semibold">
-            Appointment
-          </a>
+          <div className="hidden md:block">
+            <a className="btn bg-transparent text-[#FF3811] border-2 border-[#FF3811] hover:bg-[#FF3811] hover:border-0 hover:text-white hover:font-semibold">
+              Appointment
+            </a>
           </div>
           <DarkModeToggle />
         </div>
