@@ -1,12 +1,10 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const Login = () => { 
     const {Login, googleLogin} = useContext(AuthContext);
-    const [showPass, setShowPass] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
     const location = useLocation();
     const navigate = useNavigate();
@@ -18,6 +16,7 @@ const Login = () => {
         Login(email, password)
         .then(result=>{
             console.log(result.user);
+            navigate(location?.state ? location?.state : "/");
         })
         .catch((error) => {
             console.error(error);
@@ -34,7 +33,7 @@ const Login = () => {
         googleLogin()
         .then(result=>{
           console.log(result.user);
-          navigate(location?.state ? location.state : "/");
+          navigate(location?.state ? location?.state : "/");
         })
         .catch();
       };
@@ -68,18 +67,18 @@ const Login = () => {
                 </label>
                 <div>
                 <input
-                  type={showPass ? "text" : "password"}
+                  type="password"
                   name="password"
                   placeholder="password"
                   className="input input-bordered w-full"
                   required
                 />
-                <label
+                {/* <label
                   className="absolute ml-[-30px] py-3 text-xl"
                   onClick={() => setShowPass(!showPass)}
                 >
                   {showPass ? <FaEye /> : <FaEyeSlash />}
-                </label>
+                </label> */}
                 </div>
                 {errorMessage && (
                   <p className="text-red-600 mt-2 text-sm">
