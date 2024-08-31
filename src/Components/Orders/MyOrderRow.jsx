@@ -26,23 +26,23 @@ const {_id, CustomerName, ServiceName, img, Price, ServiceId, email, status } = 
         </th>
         <td>
           <div className="flex items-center gap-3">
-            <div className="avatar">
+            <div className="avatar hidden lg:block">
               <div className="rounded-xl h-32 w-40">
                 <img src={img} alt="Avatar Tailwind CSS Component" />
               </div>
             </div>
             <div>
-              <div className="font-bold text-2xl">{ServiceName}</div>
-              <div className="text-sm opacity-50">{ServiceId}</div>
+              <div className="font-bold text-lg md:text-2xl">{ServiceName}</div>
+              <div className="text-sm hidden md:block opacity-50">{ServiceId}</div>
             </div>
           </div>
         </td>
-        <td className="font-semibold text-xl">
+        <td className="font-semibold hidden md:block md:text-xl">
           {CustomerName}
           <br />
-          <span className="badge badge-ghost dark:bg-gray-300 dark:border-0 badge-sm">{email}</span>
+          <span className="badge badge-ghost hidden md:block dark:bg-gray-300 dark:border-0 badge-sm">{email}</span>
         </td>
-        <td className="font-semibold text-xl">$ {Price}</td>
+        <td className="font-semibold  md:text-xl">$ {Price}</td>
         <th>
           {
             status === 'Confirm' ?

@@ -70,16 +70,16 @@ const MyOrders = () => {
     <div>
       <div className="relative mb-5">
         <div className="absolute rounded-xl h-full bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]">
-          <h2 className="text-white font-bold md:text-4xl lg:text-7xl md:my-24 lg:my-32 mx-10">
+          <h2 className="text-white font-bold my-10 text-4xl lg:text-7xl md:my-24 lg:my-32 mx-10">
             Order Details
           </h2>
         </div>
         <img
           src="https://raw.githubusercontent.com/MorshedSiam03/Car-Doctor/main/src/assets/images/checkout/checkout.png"
           alt="Checkout"
-          className="w-full"
+          className="w-full h-40 md:h-full"
         />
-        <div className="absolute bottom-0 md:mx-[260px] lg:mx-[470px]">
+        <div className="absolute bottom-0 mx-12 md:mx-[260px] lg:mx-[470px]">
           <div className="w-80 h-0 border-b-[50px] border-[#FF3811] border-l-[50px] border-l-transparent border-r-[50px] border-r-transparent">
             <div className="absolute inset-x-0 bottom-0 text-center text-white transform mb-3">
               <h1 className="text-xl">Home/MyOrders</h1>
@@ -90,10 +90,10 @@ const MyOrders = () => {
       <div className="overflow-x-auto">
         <table className="table">
           <thead>
-            <tr className="text-xl dark:text-white">
+            <tr className="text-lg md:text-xl dark:text-white">
               <th>Action</th>
               <th>Service</th>
-              <th>Customer</th>
+              <th className=" hidden md:block" >Customer</th>
               <th>Price</th>
               <th>Status</th>
             </tr>
